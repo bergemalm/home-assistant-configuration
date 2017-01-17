@@ -1,0 +1,15 @@
+- name: Home
+  latitude: !secret latitude_home
+  longitude: !secret longitude_home
+  radius: 50
+  icon: mdi:home-variant
+
+- name: Work
+  latitude: !secret latitude_work
+  longitude: !secret longitude_work
+  icon: mdi:responsive
+
+- name: School
+  latitude: !secret latitude_school
+  longitude: !secret longitude_school
+  icon: mdi:school

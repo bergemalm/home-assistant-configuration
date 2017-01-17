@@ -1,0 +1,224 @@
+lights:
+  name: Lights
+  view: yes
+  entities:
+    - light.master_bedroom
+    - light.upper_hallway
+    - group.stairs
+    - group.living_room
+    - light.dining
+    - light.hallway
+    - light.mancave
+    - light.lightstrip
+
+switches:
+  name: Switches
+  view: yes
+  entities:
+    - group.smart_switch_upstairs
+    - group.smart_switch_entry
+    - group.smart_switch_downstairs
+    - group.fibaro_switch_1
+    - group.fibaro_switch_2
+    - group.fibaro_switch_3
+
+scenes:
+  name: Scenes
+  view: yes
+  entities:
+    - scene.livingroom_relax
+    - scene.livingroom_movie
+    - scene.stairs
+    - scene.stairs_off
+    - scene.night_mode_upstairs
+    - scene.night_mode_upstairs_off
+
+media_players:
+  name: Media
+  view: yes
+  entities:
+    - media_player._ue65ju7505_ue65ju7500
+    - media_player.kodi
+    - media_player.living_room_home
+    - media_player.rasplex
+
+living_room:
+  name: Living Room
+  entities:
+    - light.living_room_1
+    - light.living_room_2
+    - light.living_room_3
+
+stairs:
+  name: Stairs
+  entities:
+    - light.stairs_1
+    - light.stairs_2
+
+sensor_upstairs:
+  name: MultiSensor Upstairs
+  entities:
+    - binary_sensor.aeotec_zw100_multisensor_6_sensor_7_0
+    - sensor.aeotec_zw100_multisensor_6_alarm_type_7_0
+    - sensor.aeotec_zw100_multisensor_6_alarm_level_7_1
+    - sensor.aeotec_zw100_multisensor_6_burglar_7_10
+    - sensor.aeotec_zw100_multisensor_6_luminance_7_3
+    - sensor.aeotec_zw100_multisensor_6_relative_humidity_7_5
+    - sensor.aeotec_zw100_multisensor_6_sourcenodeid_7_2
+    - sensor.aeotec_zw100_multisensor_6_temperature_7_1
+    - sensor.aeotec_zw100_multisensor_6_ultraviolet_7_27
+
+sensor_entry:
+  name: MultiSensor Entry
+  entities:
+    - binary_sensor.aeotec_zw100_multisensor_6_sensor_6_0
+    - sensor.aeotec_zw100_multisensor_6_alarm_type_6_0
+    - sensor.aeotec_zw100_multisensor_6_alarm_level_6_1
+    - sensor.aeotec_zw100_multisensor_6_burglar_6_10
+    - sensor.aeotec_zw100_multisensor_6_luminance_6_3
+    - sensor.aeotec_zw100_multisensor_6_relative_humidity_6_5
+    - sensor.aeotec_zw100_multisensor_6_sourcenodeid_6_2
+    - sensor.aeotec_zw100_multisensor_6_temperature_6_1
+    - sensor.aeotec_zw100_multisensor_6_ultraviolet_6_27
+
+sensor_downstairs:
+  name: MultiSensor Downstairs
+  entities:
+    - binary_sensor.aeotec_zw100_multisensor_6_sensor_5_0
+    - sensor.aeotec_zw100_multisensor_6_alarm_type_5_0
+    - sensor.aeotec_zw100_multisensor_6_alarm_level_5_1
+    - sensor.aeotec_zw100_multisensor_6_burglar_5_10
+    - sensor.aeotec_zw100_multisensor_6_luminance_5_3
+    - sensor.aeotec_zw100_multisensor_6_relative_humidity_5_5
+    - sensor.aeotec_zw100_multisensor_6_sourcenodeid_5_2
+    - sensor.aeotec_zw100_multisensor_6_temperature_5_1
+    - sensor.aeotec_zw100_multisensor_6_ultraviolet_5_27
+
+smart_switch_upstairs:
+  name: Smart Switch Upstairs
+  entities:
+    - switch.aeotec_zw096_smart_switch_6_switch_4_0
+    - sensor.aeotec_zw096_smart_switch_6_voltage_4_16
+    - sensor.aeotec_zw096_smart_switch_6_current_4_20
+    - sensor.aeotec_zw096_smart_switch_6_power_4_8
+    - sensor.aeotec_zw096_smart_switch_6_energy_4_0
+    - sensor.aeotec_zw096_smart_switch_6_previous_reading_4_1
+
+smart_switch_entry:
+  name: Smart Switch Entry
+  entities:
+    - switch.aeotec_zw096_smart_switch_6_switch_3_0
+    - sensor.aeotec_zw096_smart_switch_6_voltage_3_16
+    - sensor.aeotec_zw096_smart_switch_6_current_3_20
+    - sensor.aeotec_zw096_smart_switch_6_power_3_8
+    - sensor.aeotec_zw096_smart_switch_6_energy_3_0
+    - sensor.aeotec_zw096_smart_switch_6_previous_reading_3_1
+
+smart_switch_downstairs:
+  name: Smart Switch Downstairs
+  entities:
+    - switch.aeotec_zw096_smart_switch_6_switch_2_0
+    - sensor.aeotec_zw096_smart_switch_6_voltage_2_16
+    - sensor.aeotec_zw096_smart_switch_6_current_2_20
+    - sensor.aeotec_zw096_smart_switch_6_power_2_8
+    - sensor.aeotec_zw096_smart_switch_6_energy_2_0
+    - sensor.aeotec_zw096_smart_switch_6_previous_reading_2_1
+
+fibaro_switch_1:
+  name: Fibaro Switch 1
+  entities:
+    - switch.fibaro_system_fgwpef_wall_plug_gen5_switch_11_0
+    - sensor.fibaro_system_fgwpef_wall_plug_gen5_energy_11_0
+    - sensor.fibaro_system_fgwpef_wall_plug_gen5_exporting_11_32
+    - sensor.fibaro_system_fgwpef_wall_plug_gen5_power_11_4
+    - sensor.fibaro_system_fgwpef_wall_plug_gen5_power_11_8
+    - sensor.fibaro_system_fgwpef_wall_plug_gen5_alarm_level_11_1
+    - sensor.fibaro_system_fgwpef_wall_plug_gen5_alarm_type_11_0
+    - sensor.fibaro_system_fgwpef_wall_plug_gen5_sourcenodeid_11_2
+    - sensor.fibaro_system_fgwpef_wall_plug_gen5_power_management_11_11
+
+fibaro_switch_2:
+  name: Fibaro Switch 2
+  entities:
+    - switch.fibaro_system_fgwpef_wall_plug_gen5_switch_12_0
+    - sensor.fibaro_system_fgwpef_wall_plug_gen5_energy_12_0
+    - sensor.fibaro_system_fgwpef_wall_plug_gen5_exporting_12_32
+    - sensor.fibaro_system_fgwpef_wall_plug_gen5_power_12_4
+    - sensor.fibaro_system_fgwpef_wall_plug_gen5_power_12_8
+    - sensor.fibaro_system_fgwpef_wall_plug_gen5_alarm_level_12_1
+    - sensor.fibaro_system_fgwpef_wall_plug_gen5_alarm_type_12_0
+    - sensor.fibaro_system_fgwpef_wall_plug_gen5_sourcenodeid_12_2
+    - sensor.fibaro_system_fgwpef_wall_plug_gen5_power_management_12_11
+
+fibaro_switch_3:
+  name: Fibaro Switch 3
+  entities:
+    - switch.fibaro_system_fgwpef_wall_plug_gen5_switch_13_0
+    - sensor.fibaro_system_fgwpef_wall_plug_gen5_energy_13_0
+    - sensor.fibaro_system_fgwpef_wall_plug_gen5_exporting_13_32
+    - sensor.fibaro_system_fgwpef_wall_plug_gen5_power_13_4
+    - sensor.fibaro_system_fgwpef_wall_plug_gen5_power_13_8
+    - sensor.fibaro_system_fgwpef_wall_plug_gen5_alarm_level_13_1
+    - sensor.fibaro_system_fgwpef_wall_plug_gen5_alarm_type_13_0
+    - sensor.fibaro_system_fgwpef_wall_plug_gen5_sourcenodeid_13_2
+    - sensor.fibaro_system_fgwpef_wall_plug_gen5_power_management_13_11
+
+smoke_sensor_upstairs:
+  name: Smoke Sensor Upstairs
+  entities:
+    - binary_sensor.fibaro_system_fgsd002_smoke_sensor_sensor_10_0
+    - sensor.fibaro_system_fgsd002_smoke_sensor_temperature_10_1
+    - sensor.fibaro_system_fgsd002_smoke_sensor_smoke_10_1
+    - sensor.fibaro_system_fgsd002_smoke_sensor_smoke_10_4
+    - sensor.fibaro_system_fgsd002_smoke_sensor_alarm_level_10_1
+    - sensor.fibaro_system_fgsd002_smoke_sensor_alarm_type_10_0
+    - sensor.fibaro_system_fgsd002_smoke_sensor_burglar_10_10
+    - sensor.fibaro_system_fgsd002_smoke_sensor_general_10_0
+    - sensor.fibaro_system_fgsd002_smoke_sensor_heat_10_4
+    - sensor.fibaro_system_fgsd002_smoke_sensor_heat_10_7
+    - sensor.fibaro_system_fgsd002_smoke_sensor_power_management_10_11
+    - sensor.fibaro_system_fgsd002_smoke_sensor_sourcenodeid_10_2 
+    - sensor.fibaro_system_fgsd002_smoke_sensor_system_10_12
+
+smoke_sensor_entry:
+  name: Smoke Sensor Entry
+  entities:
+    - binary_sensor.fibaro_system_fgsd002_smoke_sensor_sensor_9_0
+    - sensor.fibaro_system_fgsd002_smoke_sensor_temperature_9_1
+    - sensor.fibaro_system_fgsd002_smoke_sensor_smoke_9_1
+    - sensor.fibaro_system_fgsd002_smoke_sensor_smoke_9_4
+    - sensor.fibaro_system_fgsd002_smoke_sensor_alarm_level_9_1
+    - sensor.fibaro_system_fgsd002_smoke_sensor_alarm_type_9_0
+    - sensor.fibaro_system_fgsd002_smoke_sensor_burglar_9_10
+    - sensor.fibaro_system_fgsd002_smoke_sensor_general_9_0
+    - sensor.fibaro_system_fgsd002_smoke_sensor_heat_9_4
+    - sensor.fibaro_system_fgsd002_smoke_sensor_heat_9_7
+    - sensor.fibaro_system_fgsd002_smoke_sensor_power_management_9_11
+    - sensor.fibaro_system_fgsd002_smoke_sensor_sourcenodeid_9_2
+    - sensor.fibaro_system_fgsd002_smoke_sensor_system_9_12
+
+smoke_sensor_downstairs:
+  name: Smoke Sensor Downstairs
+  entities:
+    - binary_sensor.fibaro_system_fgsd002_smoke_sensor_sensor_8_0
+    - sensor.fibaro_system_fgsd002_smoke_sensor_temperature_8_1
+    - sensor.fibaro_system_fgsd002_smoke_sensor_smoke_8_1
+    - sensor.fibaro_system_fgsd002_smoke_sensor_smoke_8_4
+    - sensor.fibaro_system_fgsd002_smoke_sensor_alarm_level_8_1
+    - sensor.fibaro_system_fgsd002_smoke_sensor_alarm_type_8_0
+    - sensor.fibaro_system_fgsd002_smoke_sensor_burglar_8_10
+    - sensor.fibaro_system_fgsd002_smoke_sensor_general_8_0
+    - sensor.fibaro_system_fgsd002_smoke_sensor_heat_8_4
+    - sensor.fibaro_system_fgsd002_smoke_sensor_heat_8_7
+    - sensor.fibaro_system_fgsd002_smoke_sensor_power_management_8_11
+    - sensor.fibaro_system_fgsd002_smoke_sensor_sourcenodeid_8_2
+    - sensor.fibaro_system_fgsd002_smoke_sensor_system_8_12
+
+family:
+  name: Family
+  entities:
+    - device_tracker.mikael_s7edge
+    - device_tracker.jessicasiphone
+    - device_tracker.iphone6
+    - device_tracker.isac_d6503
+    - device_tracker.wilda_m0

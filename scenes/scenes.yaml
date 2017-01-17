@@ -1,0 +1,78 @@
+- name: Livingroom relax
+  entities:
+    light.living_room:
+      state: on
+      transition: 2
+      profile: relax
+    light.dining:
+      state: on
+      transition: 2
+      brightness: 144
+
+- name: Livingroom colorloop
+  entities:
+    light.living_room:
+      state: on
+      transition: 2
+      effect: colorloop
+    light.dining:
+      state: on
+      transition: 2
+      effect: colorloop
+
+- name: Livingroom movie
+  entities:
+    light.living_room:
+      state: on
+      transition: 2
+      brightness: 60
+    light.dining:
+      state: off
+      transition: 2
+
+- name: Mancave relax
+  entities:
+    light.mancave:
+      state: on
+      transition: 2
+      profile: relax
+      
+- name: Mancave movie
+  entities:
+    light.mancave:
+      state: off
+      transition: 2
+
+- name: Stairs
+  entities:
+    light.stairs:
+      state: on
+      transition: 1
+      brightness: 50
+
+- name: Stairs off
+  entities:
+    light.stairs:
+      state: off
+      transition: 1
+
+- name: Night mode upstairs
+  entities:
+    light.upper_hallway:
+      state: on
+      transition: 1
+      rgb_color: [255, 43, 134]
+      brightness: 60
+    light.stairs:
+      state: on
+      transition: 1
+      brightness: 25
+
+- name: Night mode upstairs off
+  entities:
+    light.upper_hallway:
+      state: off
+      transition: 1
+    light.stairs:
+      state: off
+      transition: 1

@@ -1,0 +1,11 @@
+.HA_VERSION
+.uuid
+*.txt
+*.log
+*.db
+*.conf
+*.sqlite
+*.xml
+deps
+known_devices.yaml
+secrets.yaml

@@ -1,0 +1,100 @@
+homeassistant:
+  name: Home
+  latitude: !secret latitude_home
+  longitude: !secret longitude_home
+  elevation: 12
+  unit_system: metric
+  time_zone: Europe/Stockholm
+  customize: !include customize.yaml
+
+# logging
+logger:
+  default: info
+
+# Checks for available updates
+updater:
+
+# Allows you to issue voice commands from the frontend
+conversation:
+
+# Enables the frontend
+frontend:
+
+# http settings
+http:
+  api_password: !secret http_password
+
+# Discover some devices automatically
+discovery:
+
+# View all events in a logbook
+logbook:
+
+# recorder
+recorder:
+  purge_days: 14
+
+# Enables support for tracking state changes over time.
+history:
+
+# Track the sun
+sun:
+  elevation: 12
+
+#emulated_hue:
+#  type: google_home
+#  listen_port: 80
+#  expose_by_default: true
+#  exposed_domains:
+#    - light
+#    - switch
+#    - media_player
+
+light:
+  platform: hue
+  host: 192.168.1.108
+
+mqtt:
+  broker: 127.0.0.1
+  port: 1883
+  client_id: home-assistant-1
+  keepalive: 60
+  username: !secret mosquitto_user
+  password: !secret mosquitto_pass
+
+ifttt:
+  key: !secret ifttt_key
+
+tts:
+  - platform: google
+    cache: true
+    cache_dir: /tmp/tts
+    time_memory: 300
+
+zwave:
+  usb_path: /dev/ttyACM0
+  config_path: /usr/lib/python3.6/site-packages/libopenzwave-0.3.1-py3.6-linux-aarch64.egg/config
+  polling_interval: 60000
+  customize:
+    sensor.aeotec_zw096_smart_switch_6_power_2_8:
+      polling_intensity: 1
+    sensor.aeotec_zw096_smart_switch_6_power_3_8:
+      polling_intensity: 1
+    sensor.aeotec_zw096_smart_switch_6_power_4_8:
+      polling_intensity: 1
+    sensor.fibaro_system_fgwpef_wall_plug_gen5_power_11_4:
+      polling_intensity: 1
+    sensor.fibaro_system_fgwpef_wall_plug_gen5_power_12_4:
+      polling_intensity: 1
+    sensor.fibaro_system_fgwpef_wall_plug_gen5_power_13_4:
+      polling_intensity: 1
+
+# includes
+automation: !include_dir_merge_list automations/
+device_tracker: !include device_trackers.yaml
+group: !include_dir_merge_named groups/
+media_player: !include_dir_merge_list media_players/
+notify: !include_dir_merge_list notify/
+scene: !include_dir_merge_list scenes/
+sensor: !include sensors.yaml
+zone: !include_dir_merge_list zones/

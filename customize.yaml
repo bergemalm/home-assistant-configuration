@@ -1,0 +1,293 @@
+###############################
+########### Lights ############
+
+light.hallway_1:
+  icon: mdi:lamp
+light.mancave_1:
+  icon: mdi:lamp
+light.stairs_1:
+  icon: mdi:spotlight-beam
+light.stairs_2:
+  icon: mdi:spotlight-beam
+
+###############################
+##### Aeotec MultiSensors #####
+
+binary_sensor.aeotec_zw100_multisensor_6_sensor_7_0:
+  friendly_name: "MultiSensor Upstairs"
+sensor.aeotec_zw100_multisensor_6_alarm_type_7_0:
+  hidden: true
+sensor.aeotec_zw100_multisensor_6_alarm_level_7_1:
+  hidden: true
+sensor.aeotec_zw100_multisensor_6_burglar_7_10:
+  friendly_name: "Motion"
+  icon: mdi:security
+sensor.aeotec_zw100_multisensor_6_luminance_7_3:
+  friendly_name: "Luminance"
+  icon: mdi:brightness-7
+sensor.aeotec_zw100_multisensor_6_relative_humidity_7_5:
+  friendly_name: "Humidity"
+  icon: mdi:water
+sensor.aeotec_zw100_multisensor_6_sourcenodeid_7_2:
+  hidden: true
+sensor.aeotec_zw100_multisensor_6_temperature_7_1:
+  friendly_name: "Temperature"
+sensor.aeotec_zw100_multisensor_6_ultraviolet_7_27:
+  friendly_name: "Ultraviolet"
+  icon: mdi:weather-sunny
+
+binary_sensor.aeotec_zw100_multisensor_6_sensor_6_0:
+  friendly_name: "MultiSensor Entry"
+sensor.aeotec_zw100_multisensor_6_alarm_type_6_0:
+  hidden: true
+sensor.aeotec_zw100_multisensor_6_alarm_level_6_1:
+  hidden: true
+sensor.aeotec_zw100_multisensor_6_burglar_6_10:
+  friendly_name: "Motion"
+  icon: mdi:security
+sensor.aeotec_zw100_multisensor_6_luminance_6_3:
+  friendly_name: "Luminance"
+  icon: mdi:brightness-7
+sensor.aeotec_zw100_multisensor_6_relative_humidity_6_5:
+  friendly_name: "Humidity"
+  icon: mdi:water
+sensor.aeotec_zw100_multisensor_6_sourcenodeid_6_2:
+  hidden: true
+sensor.aeotec_zw100_multisensor_6_temperature_6_1:
+  friendly_name: "Temperature"
+sensor.aeotec_zw100_multisensor_6_ultraviolet_6_27:
+  friendly_name: "Ultraviolet"
+  icon: mdi:weather-sunny
+
+binary_sensor.aeotec_zw100_multisensor_6_sensor_5_0:
+  friendly_name: "MultiSensor Downstairs"
+sensor.aeotec_zw100_multisensor_6_alarm_type_5_0:
+  hidden: true
+sensor.aeotec_zw100_multisensor_6_alarm_level_5_1:
+  hidden: true
+sensor.aeotec_zw100_multisensor_6_burglar_5_10:
+  friendly_name: "Motion"
+  icon: mdi:security
+sensor.aeotec_zw100_multisensor_6_luminance_5_3:
+  friendly_name: "Luminance"
+  icon: mdi:brightness-7
+sensor.aeotec_zw100_multisensor_6_relative_humidity_5_5:
+  friendly_name: "Humidity"
+  icon: mdi:water
+sensor.aeotec_zw100_multisensor_6_sourcenodeid_5_2:
+  hidden: true
+sensor.aeotec_zw100_multisensor_6_temperature_5_1:
+  friendly_name: "Temperature"
+sensor.aeotec_zw100_multisensor_6_ultraviolet_5_27:
+  friendly_name: "Ultraviolet"
+  icon: mdi:weather-sunny
+
+#################################
+##### Aeotec Smart Switches #####
+
+switch.aeotec_zw096_smart_switch_6_switch_4_0:
+  friendly_name: "Smart Switch Upstairs"
+sensor.aeotec_zw096_smart_switch_6_voltage_4_16:
+  friendly_name: "Voltage"
+  icon: mdi:power-socket
+sensor.aeotec_zw096_smart_switch_6_current_4_20:
+  friendly_name: "Current"
+sensor.aeotec_zw096_smart_switch_6_power_4_8:
+  friendly_name: "Power"
+sensor.aeotec_zw096_smart_switch_6_energy_4_0:
+  friendly_name: "Energy"
+sensor.aeotec_zw096_smart_switch_6_previous_reading_4_1:
+  friendly_name: "Previous"
+
+switch.aeotec_zw096_smart_switch_6_switch_3_0:
+  friendly_name: "Smart Switch Entry"
+sensor.aeotec_zw096_smart_switch_6_voltage_3_16:
+  friendly_name: "Voltage"
+  icon: mdi:power-socket
+sensor.aeotec_zw096_smart_switch_6_current_3_20:
+  friendly_name: "Current"
+sensor.aeotec_zw096_smart_switch_6_power_3_8:
+  friendly_name: "Power"
+sensor.aeotec_zw096_smart_switch_6_energy_3_0:
+  friendly_name: "Energy"
+sensor.aeotec_zw096_smart_switch_6_previous_reading_3_1:
+  friendly_name: "Previous"
+
+switch.aeotec_zw096_smart_switch_6_switch_2_0:
+  friendly_name: "Smart Switch Downstairs"
+sensor.aeotec_zw096_smart_switch_6_voltage_2_16:
+  friendly_name: "Voltage"
+  icon: mdi:power-socket
+sensor.aeotec_zw096_smart_switch_6_current_2_20:
+  friendly_name: "Current"
+sensor.aeotec_zw096_smart_switch_6_power_2_8:
+  friendly_name: "Power"
+sensor.aeotec_zw096_smart_switch_6_energy_2_0:
+  friendly_name: "Energy"
+sensor.aeotec_zw096_smart_switch_6_previous_reading_2_1:
+  friendly_name: "Previous"
+
+################################
+##### Fibaro Wall Plugs ########
+
+switch.fibaro_system_fgwpef_wall_plug_gen5_switch_11_0:
+  friendly_name: "Fibaro Switch 1"
+sensor.fibaro_system_fgwpef_wall_plug_gen5_energy_11_0:
+  friendly_name: "Energy"
+sensor.fibaro_system_fgwpef_wall_plug_gen5_exporting_11_32:
+  friendly_name: "Exporting"
+sensor.fibaro_system_fgwpef_wall_plug_gen5_power_11_4:
+  friendly_name: "Power"
+sensor.fibaro_system_fgwpef_wall_plug_gen5_power_11_8:
+  friendly_name: "Previous"
+sensor.fibaro_system_fgwpef_wall_plug_gen5_alarm_level_11_1:
+  hidden: true
+sensor.fibaro_system_fgwpef_wall_plug_gen5_alarm_type_11_0:
+  hidden: true
+sensor.fibaro_system_fgwpef_wall_plug_gen5_sourcenodeid_11_2:
+  hidden: true
+sensor.fibaro_system_fgwpef_wall_plug_gen5_power_management_11_11:
+  hidden: true
+
+switch.fibaro_system_fgwpef_wall_plug_gen5_switch_12_0:
+  friendly_name: "Fibaro Switch 2"
+sensor.fibaro_system_fgwpef_wall_plug_gen5_energy_12_0:
+  friendly_name: "Energy"
+sensor.fibaro_system_fgwpef_wall_plug_gen5_exporting_12_32:
+  friendly_name: "Exporting"
+sensor.fibaro_system_fgwpef_wall_plug_gen5_power_12_4:
+  friendly_name: "Power"
+sensor.fibaro_system_fgwpef_wall_plug_gen5_power_12_8:
+  friendly_name: "Previous"
+sensor.fibaro_system_fgwpef_wall_plug_gen5_alarm_level_12_1:
+  hidden: true
+sensor.fibaro_system_fgwpef_wall_plug_gen5_alarm_type_12_0:
+  hidden: true
+sensor.fibaro_system_fgwpef_wall_plug_gen5_sourcenodeid_12_2:
+  hidden: true
+sensor.fibaro_system_fgwpef_wall_plug_gen5_power_management_12_11:
+  hidden: true
+
+switch.fibaro_system_fgwpef_wall_plug_gen5_switch_13_0:
+  friendly_name: "Fibaro Switch 3"
+sensor.fibaro_system_fgwpef_wall_plug_gen5_energy_13_0:
+  friendly_name: "Energy"
+sensor.fibaro_system_fgwpef_wall_plug_gen5_exporting_13_32:
+  friendly_name: "Exporting"
+sensor.fibaro_system_fgwpef_wall_plug_gen5_power_13_4:
+  friendly_name: "Power"
+sensor.fibaro_system_fgwpef_wall_plug_gen5_power_13_8:
+  friendly_name: "Previous"
+sensor.fibaro_system_fgwpef_wall_plug_gen5_alarm_level_13_1:
+  hidden: true
+sensor.fibaro_system_fgwpef_wall_plug_gen5_alarm_type_13_0:
+  hidden: true
+sensor.fibaro_system_fgwpef_wall_plug_gen5_sourcenodeid_13_2:
+  hidden: true
+sensor.fibaro_system_fgwpef_wall_plug_gen5_power_management_13_11:
+  hidden: true
+
+################################
+##### Fibaro Smoke Sensors #####
+
+binary_sensor.fibaro_system_fgsd002_smoke_sensor_sensor_10_0:
+  friendly_name: "Smoke Sensor Upstairs"
+sensor.fibaro_system_fgsd002_smoke_sensor_temperature_10_1:
+  friendly_name: "Temperature"
+  icon: mdi:thermometer
+sensor.fibaro_system_fgsd002_smoke_sensor_smoke_10_1:
+  friendly_name: "Smoke"
+  icon: mdi:fire
+sensor.fibaro_system_fgsd002_smoke_sensor_smoke_10_4:
+  friendly_name: "Smoke 4"
+  icon: mdi:fire
+  hidden: true
+sensor.fibaro_system_fgsd002_smoke_sensor_alarm_level_10_1:
+  hidden: true
+sensor.fibaro_system_fgsd002_smoke_sensor_alarm_type_10_0:
+  hidden: true
+sensor.fibaro_system_fgsd002_smoke_sensor_burglar_10_10:
+  hidden: true
+sensor.fibaro_system_fgsd002_smoke_sensor_general_10_0:
+  hidden: true
+sensor.fibaro_system_fgsd002_smoke_sensor_heat_10_4:
+  friendly_name: "Heat"
+  icon: mdi:fire
+sensor.fibaro_system_fgsd002_smoke_sensor_heat_10_7:
+  friendly_name: "Heat 7"
+  icon: mdi:fire
+  hidden: true
+sensor.fibaro_system_fgsd002_smoke_sensor_power_management_10_11:
+  hidden: true
+sensor.fibaro_system_fgsd002_smoke_sensor_sourcenodeid_10_2:
+  hidden: true
+sensor.fibaro_system_fgsd002_smoke_sensor_system_10_12:
+  hidden: true
+
+binary_sensor.fibaro_system_fgsd002_smoke_sensor_sensor_9_0:
+  friendly_name: "Smoke Sensor Entry"
+sensor.fibaro_system_fgsd002_smoke_sensor_temperature_9_1:
+  friendly_name: "Temperature"
+  icon: mdi:thermometer
+sensor.fibaro_system_fgsd002_smoke_sensor_smoke_9_1:
+  friendly_name: "Smoke"
+  icon: mdi:fire
+sensor.fibaro_system_fgsd002_smoke_sensor_smoke_9_4:
+  friendly_name: "Smoke 4"
+  icon: mdi:fire
+  hidden: true
+sensor.fibaro_system_fgsd002_smoke_sensor_alarm_level_9_1:
+  hidden: true
+sensor.fibaro_system_fgsd002_smoke_sensor_alarm_type_9_0:
+  hidden: true
+sensor.fibaro_system_fgsd002_smoke_sensor_burglar_9_10:
+  hidden: true
+sensor.fibaro_system_fgsd002_smoke_sensor_general_9_0:
+  hidden: true
+sensor.fibaro_system_fgsd002_smoke_sensor_heat_9_4:
+  friendly_name: "Heat"
+  icon: mdi:fire
+sensor.fibaro_system_fgsd002_smoke_sensor_heat_9_7:
+  friendly_name: "Heat 7"
+  icon: mdi:fire
+  hidden: true
+sensor.fibaro_system_fgsd002_smoke_sensor_power_management_9_11:
+  hidden: true
+sensor.fibaro_system_fgsd002_smoke_sensor_sourcenodeid_9_2:
+  hidden: true
+sensor.fibaro_system_fgsd002_smoke_sensor_system_9_12:
+  hidden: true
+
+binary_sensor.fibaro_system_fgsd002_smoke_sensor_sensor_8_0:
+  friendly_name: "Smoke Sensor Downstairs"
+sensor.fibaro_system_fgsd002_smoke_sensor_temperature_8_1:
+  friendly_name: "Temperature"
+  icon: mdi:thermometer
+sensor.fibaro_system_fgsd002_smoke_sensor_smoke_8_1:
+  friendly_name: "Smoke"
+  icon: mdi:fire
+sensor.fibaro_system_fgsd002_smoke_sensor_smoke_8_4:
+  friendly_name: "Smoke 4"
+  icon: mdi:fire
+  hidden: true
+sensor.fibaro_system_fgsd002_smoke_sensor_alarm_level_8_1:
+  hidden: true
+sensor.fibaro_system_fgsd002_smoke_sensor_alarm_type_8_0:
+  hidden: true
+sensor.fibaro_system_fgsd002_smoke_sensor_burglar_8_10:
+  hidden: true
+sensor.fibaro_system_fgsd002_smoke_sensor_general_8_0:
+  hidden: true
+sensor.fibaro_system_fgsd002_smoke_sensor_heat_8_4:
+  friendly_name: "Heat"
+  icon: mdi:fire
+sensor.fibaro_system_fgsd002_smoke_sensor_heat_8_7:
+  friendly_name: "Heat 7"
+  icon: mdi:fire
+  hidden: true
+sensor.fibaro_system_fgsd002_smoke_sensor_power_management_8_11:
+  hidden: true
+sensor.fibaro_system_fgsd002_smoke_sensor_sourcenodeid_8_2:
+  hidden: true
+sensor.fibaro_system_fgsd002_smoke_sensor_system_8_12:
+  hidden: true

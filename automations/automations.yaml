@@ -1,0 +1,311 @@
+###############
+# Automations #
+###############
+
+- alias: Turn lights on when sun sets
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.aeotec_zw100_multisensor_6_luminance_7_3
+    below: '16'
+  condition:
+    condition: state
+    entity_id: group.all_devices
+    state: 'home'
+  action:
+    service: homeassistant.turn_on
+    entity_id: 
+      - light.living_room
+      - light.dining
+      - light.hallway
+      - scene.stairs
+      - switch.aeotec_zw096_smart_switch_6_switch_4_0
+
+- alias: Turn light on when arriving home if it's dark
+  trigger:
+    platform: state
+    entity_id: group.all_devices
+    from: 'not_home'
+    to: 'home'
+  condition:
+     condition: numeric_state
+     entity_id: sensor.aeotec_zw100_multisensor_6_luminance_7_3
+     below: '16'
+  action:
+    service: homeassistant.turn_on
+    entity_id:
+      - light.living_room
+      - light.dining
+      - light.hallway
+      - scene.stairs
+      - switch.aeotec_zw096_smart_switch_6_switch_4_0
+
+- alias: Turn lights off if the world is bright
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.aeotec_zw100_multisensor_6_luminance_7_3
+    above: '20'
+  action:
+    service: homeassistant.turn_off
+    entity_id: 
+      - light.living_room
+      - light.dining
+      - light.hallway
+      - light.stairs
+      - switch.aeotec_zw096_smart_switch_6_switch_4_0
+
+- alias: Turn lights off at night
+  trigger:
+    platform: time
+    hours: 0
+    minutes: 0
+    seconds: 0
+  action:
+    service: homeassistant.turn_off
+    entity_id:
+      - light.living_room
+      - light.dining
+      - light.hallway
+      - light.stairs
+      - light.mancave_1
+
+- alias: Turn nightlamp off
+  trigger:
+    platform: time
+    hours: 1
+    minutes: 
+    seconds: 0
+  action:
+    service: homeassistant.turn_off
+    entity_id:
+      - switch.aeotec_zw096_smart_switch_6_switch_4_0
+
+- alias: Turn on light on motion upstairs
+  trigger:
+    platform: state
+    entity_id: sensor.aeotec_zw100_multisensor_6_burglar_7_10
+    from: '0'
+    to: '8'
+  action:
+    service: scene.turn_on
+    entity_id: scene.night_mode_upstairs
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        before: '10:00:00'
+      - condition: time
+        after: '00:00:00'
+      - condition: numeric_state
+        entity_id: sensor.aeotec_zw100_multisensor_6_luminance_7_3
+        below: '8'
+
+- alias: Turn on light on motion entry
+  trigger:
+    platform: state
+    entity_id: sensor.aeotec_zw100_multisensor_6_burglar_6_10
+    from: '0'
+    to: '8'
+  action:
+    service: light.turn_on
+    entity_id: light.hallway
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        before: '10:00:00'
+      - condition: time
+        after: '00:00:00'
+      - condition: numeric_state
+        entity_id: sensor.aeotec_zw100_multisensor_6_luminance_6_3
+        below: '8'
+
+- alias: Turn on light on motion downstairs
+  trigger:
+    platform: state
+    entity_id: sensor.aeotec_zw100_multisensor_6_burglar_5_10
+    from: '0'
+    to: '8'
+  action:
+    service: light.turn_on
+    entity_id: light.mancave_1
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        before: '23:59:00'
+      - condition: time
+        after: '21:00:00'
+      - condition: numeric_state
+        entity_id: sensor.aeotec_zw100_multisensor_6_luminance_5_3
+        below: '4'
+
+- alias: Turn off light on no motion upstairs
+  trigger:
+    platform: state
+    entity_id: sensor.aeotec_zw100_multisensor_6_burglar_7_10
+    from: '8'
+    to: '0'
+  action:
+    service: scene.turn_on
+    entity_id: scene.night_mode_upstairs_off
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        before: '10:05:00'
+      - condition: time
+        after: '00:00:00'
+
+- alias: Turn off light on no motion entry
+  trigger:
+    platform: state
+    entity_id: sensor.aeotec_zw100_multisensor_6_burglar_6_10
+    from: '8'
+    to: '0'
+  action:
+    service: light.turn_off
+    entity_id: light.hallway
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        before: '10:05:00'
+      - condition: time
+        after: '00:00:00'
+
+- alias: Turn off light on no motion downstairs
+  trigger:
+    platform: state
+    entity_id: sensor.aeotec_zw100_multisensor_6_burglar_5_10
+    from: '8'
+    to: '0'
+  action:
+    service: light.turn_off
+    entity_id: light.mancave_1
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        before: '02:00:00'
+      - condition: time
+        after: '00:00:00'
+
+- alias: "Media player Livingroom paused/stopped"
+  trigger:
+    - platform: state
+      entity_id: media_player.rasplex
+      from: 'playing'
+  condition:
+    - condition: numeric_state
+      entity_id: sun.sun
+      value_template: '{{ state.attributes.elevation }}'
+      below: '6'
+  action:
+      service: scene.turn_on
+      entity_id: scene.livingroom_relax
+
+- alias: "Media player Livingroom playing"
+  trigger:
+    - platform: state
+      entity_id: media_player.rasplex
+      to: 'playing'
+  condition:
+    - condition: numeric_state
+      entity_id: sun.sun
+      value_template: '{{ state.attributes.elevation }}'
+      below: '6'
+  action:
+      service: scene.turn_on
+      entity_id: scene.livingroom_movie
+
+- alias: "Media player Mancave paused/stopped"
+  trigger:
+    - platform: state
+      entity_id: media_player.kodi
+      from: 'playing'
+  condition:
+    - condition: numeric_state
+      entity_id: sun.sun
+      value_template: '{{ state.attributes.elevation }}'
+      below: '6'
+  action:
+      service: scene.turn_on
+      entity_id: scene.mancave_relax
+
+- alias: "Media player Mancave playing"
+  trigger:
+    - platform: state
+      entity_id: media_player.kodi
+      to: 'playing'
+  condition:
+    - condition: numeric_state
+      entity_id: sun.sun
+      value_template: '{{ state.attributes.elevation }}'
+      below: '6'
+  action:
+      service: scene.turn_on
+      entity_id: scene.mancave_movie
+
+- alias: 'Leave Home notification'
+  trigger:
+    platform: zone
+    event: leave
+    zone: zone.home
+    entity_id: device_tracker.mikael_s7edge
+  action:
+    service: notify.pushbullet
+    data:
+      message: 'Mikael left the house'
+
+- alias: 'Test notification'
+  trigger:
+    platform: zone
+    event: enter
+    zone: zone.home
+    entity_id: device_tracker.mikael_s7edge
+  action:
+    service: notify.pushbullet
+    data:
+      message: 'Mikael is at home'
+
+- alias: 'Isac at School'
+  trigger:
+    platform: zone
+    event: enter
+    zone: zone.school
+    entity_id: device_tracker.isac_d6503
+  action:
+    service: notify.pushbullet
+    data:
+      message: 'Isac is at School'
+
+- alias: 'Arlo arm'
+  trigger:
+    platform: state
+    entity_id: group.all_devices
+    state: 'not_home'
+  action:
+    - service: ifttt.trigger
+      data: {"event":"arlo_arm"}
+    - service: notify.pushbullet
+      data:
+        message: Arlo armed!
+    - service: homeassistant.turn_off
+      entity_id:
+        - light.living_room
+        - light.dining
+        - light.hallway
+        - group.stairs
+        - switch.aeotec_zw096_smart_switch_6_switch_4_0
+
+- alias: 'Arlo disarm'
+  trigger:
+    platform: state
+    entity_id: group.all_devices
+    state: 'home'
+  action:
+    - service: ifttt.trigger
+      data: {"event":"arlo_disarm"}
+    - service: notify.pushbullet
+      data:
+        message: Arlo disarmed!
