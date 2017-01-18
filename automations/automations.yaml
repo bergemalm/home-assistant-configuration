@@ -66,13 +66,13 @@
       - light.dining
       - light.hallway
       - light.stairs
-      - light.mancave_1
+      - light.mancave
 
 - alias: Turn nightlamp off
   trigger:
     platform: time
     hours: 1
-    minutes: 
+    minutes: 0
     seconds: 0
   action:
     service: homeassistant.turn_off
