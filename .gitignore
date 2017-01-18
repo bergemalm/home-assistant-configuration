@@ -3,6 +3,7 @@
 *.txt
 *.log
 *.db
+*.db-journal
 *.conf
 *.sqlite
 *.xml
