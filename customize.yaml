@@ -131,7 +131,7 @@ sensor.aeotec_zw096_smart_switch_6_previous_reading_2_1:
 ##### Fibaro Wall Plugs ########
 
 switch.fibaro_system_fgwpef_wall_plug_gen5_switch_11_0:
-  friendly_name: "Fibaro Switch 1"
+  friendly_name: "Chromecast Living Room"
 sensor.fibaro_system_fgwpef_wall_plug_gen5_energy_11_0:
   friendly_name: "Energy"
 sensor.fibaro_system_fgwpef_wall_plug_gen5_exporting_11_32:

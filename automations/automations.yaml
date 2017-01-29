@@ -47,10 +47,7 @@
   action:
     service: homeassistant.turn_off
     entity_id: 
-      - light.living_room
-      - light.dining
-      - light.hallway
-      - light.stairs
+      - group.all_lights
       - switch.aeotec_zw096_smart_switch_6_switch_4_0
 
 - alias: Turn lights off at night
@@ -62,11 +59,7 @@
   action:
     service: homeassistant.turn_off
     entity_id:
-      - light.living_room
-      - light.dining
-      - light.hallway
-      - light.stairs
-      - light.mancave
+      - group.all_lights
 
 - alias: Turn nightlamp off
   trigger:
@@ -78,6 +71,27 @@
     service: homeassistant.turn_off
     entity_id:
       - switch.aeotec_zw096_smart_switch_6_switch_4_0
+
+- alias: Turn on morning light
+  trigger:
+    platform: time
+    hours: 7
+    minutes: 0
+    seconds: 0
+  action:
+    service: light.turn_on
+    entity_id: light.master_bedroom
+    data:
+      profile: relax
+      transition: 120
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
 
 - alias: Turn on light on motion upstairs
   trigger:
@@ -292,10 +306,7 @@
         message: Arlo armed!
     - service: homeassistant.turn_off
       entity_id:
-        - light.living_room
-        - light.dining
-        - light.hallway
-        - group.stairs
+        - group.all_lights
         - switch.aeotec_zw096_smart_switch_6_switch_4_0
 
 - alias: 'Arlo disarm'

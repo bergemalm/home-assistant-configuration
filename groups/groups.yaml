@@ -1,6 +1,5 @@
 lights:
   name: Lights
-  view: yes
   entities:
     - light.master_bedroom
     - light.upper_hallway
@@ -13,7 +12,6 @@ lights:
 
 switches:
   name: Switches
-  view: yes
   entities:
     - group.smart_switch_upstairs
     - group.smart_switch_entry
@@ -22,9 +20,8 @@ switches:
     - group.fibaro_switch_2
     - group.fibaro_switch_3
 
-scenes:
+scene_group:
   name: Scenes
-  view: yes
   entities:
     - scene.livingroom_relax
     - scene.livingroom_movie
@@ -32,15 +29,6 @@ scenes:
     - scene.stairs_off
     - scene.night_mode_upstairs
     - scene.night_mode_upstairs_off
-
-media_players:
-  name: Media
-  view: yes
-  entities:
-    - media_player._ue65ju7505_ue65ju7500
-    - media_player.kodi
-    - media_player.living_room_home
-    - media_player.rasplex
 
 living_room:
   name: Living Room
@@ -214,7 +202,7 @@ smoke_sensor_downstairs:
     - sensor.fibaro_system_fgsd002_smoke_sensor_sourcenodeid_8_2
     - sensor.fibaro_system_fgsd002_smoke_sensor_system_8_12
 
-family:
+family_group:
   name: Family
   entities:
     - device_tracker.mikael_s7edge

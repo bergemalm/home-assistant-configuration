@@ -1,3 +1,10 @@
+- name: Master bedroom relax
+  entities:
+    light.master_bedroom:
+      state: on
+      transition: 2
+      profile: relax
+
 - name: Livingroom relax
   entities:
     light.living_room:

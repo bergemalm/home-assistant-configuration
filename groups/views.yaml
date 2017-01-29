@@ -1,0 +1,69 @@
+downstairs:
+  name: Downstairs
+  view: yes
+  entities:
+    - light.mancave
+    - group.smart_switch_downstairs
+    - group.sensor_downstairs
+    - group.smoke_sensor_downstairs
+    - media_player.mancave
+    - scene.mancave_relax
+    - scene.mancave_movie
+
+entry:
+  name: Entry
+  view: yes
+  entities:
+    - light.living_room
+    - light.living_room_1
+    - light.living_room_2
+    - light.living_room_3
+    - light.dining
+    - light.hallway
+    - group.smart_switch_entry
+    - group.fibaro_switch_1
+    - group.sensor_entry
+    - group.smoke_sensor_entry
+    - media_player.rasplex
+    - media_player.hallway_home
+    - media_player.living_room
+    - scene.livingroom_colorloop
+    - scene.livingroom_movie
+    - scene.livingroom_relax
+
+upstairs:
+  name: Upstairs
+  view: yes
+  entities:
+    - light.stairs
+    - light.upper_hallway
+    - light.master_bedroom
+    - group.smart_switch_upstairs
+    - group.sensor_upstairs
+    - group.smoke_sensor_upstairs
+    - scene.bedroom_relax
+
+family:
+  name: Family
+  view: yes
+  icon: mdi:account-multiple
+  entities:
+    - group.family_group
+
+media_players:
+  name: Media
+  view: yes
+  icon: mdi:play-circle-outline
+  entities:
+    - media_player._ue65ju7505_ue65ju7500
+    - media_player.hallway_home
+    - media_player.livingroom
+    - media_player.rasplex
+    - media_player.mancave
+    - media_player.kodi
+
+scenes:
+  name: Scenes
+  view: yes
+  entities:
+    - group.scene_group
