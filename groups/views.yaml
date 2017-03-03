@@ -30,6 +30,7 @@ entry:
     - scene.livingroom_colorloop
     - scene.livingroom_movie
     - scene.livingroom_relax
+    - scene.hallway_relax
 
 upstairs:
   name: Upstairs
@@ -67,3 +68,9 @@ scenes:
   view: yes
   entities:
     - group.scene_group
+
+alarm_clock:
+  name: Alarm Clock
+  view: yes
+  entities:
+    - group.alarmclock

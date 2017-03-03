@@ -73,21 +73,21 @@ tts:
 
 zwave:
   usb_path: /dev/ttyACM0
-  config_path: /usr/lib/python3.6/site-packages/libopenzwave-0.3.1-py3.6-linux-aarch64.egg/config
+  config_path: /usr/lib/python3.6/site-packages/libopenzwave-0.3.2-py3.6-linux-aarch64.egg/config
   polling_interval: 60000
-  customize:
-    sensor.aeotec_zw096_smart_switch_6_power_2_8:
-      polling_intensity: 1
-    sensor.aeotec_zw096_smart_switch_6_power_3_8:
-      polling_intensity: 1
-    sensor.aeotec_zw096_smart_switch_6_power_4_8:
-      polling_intensity: 1
-    sensor.fibaro_system_fgwpef_wall_plug_gen5_power_11_4:
-      polling_intensity: 1
-    sensor.fibaro_system_fgwpef_wall_plug_gen5_power_12_4:
-      polling_intensity: 1
-    sensor.fibaro_system_fgwpef_wall_plug_gen5_power_13_4:
-      polling_intensity: 1
+#  customize:
+#    sensor.aeotec_zw096_smart_switch_6_power_2_8:
+#      polling_intensity: 1
+#    sensor.aeotec_zw096_smart_switch_6_power_3_8:
+#      polling_intensity: 1
+#    sensor.aeotec_zw096_smart_switch_6_power_4_8:
+#      polling_intensity: 1
+#    sensor.fibaro_system_fgwpef_wall_plug_gen5_power_11_4:
+#      polling_intensity: 1
+#    sensor.fibaro_system_fgwpef_wall_plug_gen5_power_12_4:
+#      polling_intensity: 1
+#    sensor.fibaro_system_fgwpef_wall_plug_gen5_power_13_4:
+#      polling_intensity: 1
 
 # includes
 automation: !include_dir_merge_list automations/
@@ -98,3 +98,5 @@ notify: !include_dir_merge_list notify/
 scene: !include_dir_merge_list scenes/
 sensor: !include sensors.yaml
 zone: !include_dir_merge_list zones/
+input_boolean: !include input_boolean.yaml
+input_slider: !include input_slider.yaml

@@ -37,6 +37,13 @@
       state: off
       transition: 2
 
+- name: Hallway relax
+  entities:
+    light.hallway:
+      state: on
+      transition: 2
+      profile: relax
+
 - name: Mancave relax
   entities:
     light.mancave:

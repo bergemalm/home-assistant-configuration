@@ -1,20 +1,42 @@
-platform: darksky
-api_key: !secret darksky_api_key
-monitored_conditions:
-  - summary
-  - icon
-  #- nearest_storm_distance
-  #- nearest_storm_bearing
-  #- precip_type
-  #- precip_intensity
-  - precip_probability
-  - temperature
-  #- apparent_temperature
-  #- dew_point
-  - wind_speed
-  #- wind_bearing
-  #- cloud_cover
-  - humidity
-  #- pressure
-  #- visibility
-  #- ozone
+- platform: darksky
+  api_key: !secret darksky_api_key
+  monitored_conditions:
+    - summary
+    - icon
+    #- nearest_storm_distance
+    #- nearest_storm_bearing
+    #- precip_type
+    #- precip_intensity
+    - precip_probability
+    - temperature
+    #- apparent_temperature
+    #- dew_point
+    - wind_speed
+    #- wind_bearing
+    #- cloud_cover
+    - humidity
+    #- pressure
+    #- visibility
+    #- ozone
+
+- platform: systemmonitor
+  resources:
+    - type: disk_use_percent
+      arg: /home
+    - type: memory_free
+    - type: processor_use
+    - type: network_in
+      arg: eth0
+    - type: network_out
+      arg: eth0
+
+- platform: template
+  sensors:
+    alarm_time:
+      friendly_name: 'Time'
+      value_template: '{{ "%0.02d:%0.02d" | format(states("input_slider.alarmhour") | int, states("input_slider.alarmminutes") | int) }}'
+
+- platform: time_date
+  display_options:
+    - 'date'
+    - 'time'
